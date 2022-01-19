@@ -15,7 +15,7 @@ from __future__ import barry_as_FLUFL  # python mandates futures must appear
                                        # first in the module before any other
                                        # than the docstring.
 
-__version__ = 1.0.0  # Other dunders appear after futures but before other code
+__version__ = "1.0.0"  # Other dunders appear after futures but before other code
 
 import os  # STD lib imports first
 import sys  # alphabetical
@@ -28,7 +28,6 @@ import more_local_stuff
 import dont_import_two, modules_in_one_line  # IMPORTANT!
 from pyflakes_cannot_handle import *  # and there are other reasons it should be avoided # noqa
 # Using # noqa in the line above avoids flake8 warnings about line length!
-
 
 _a_global_var = 2  # so it won't get imported by 'from foo import *'
 _b_global_var = 3
@@ -115,7 +114,7 @@ class NamingConvention(object):  # Use the CapWords naming convention
         
         value -- integer the value to set for all self.a default = 2.
         """
-        self.a = value
+        cls.a = value
         
     @staticmethod
     def add(num1, num2):
@@ -140,7 +139,9 @@ or 'I' (uppercase letter eye) as single character variable names.
 """
 
 #Use whitespace sparingly in expressions and statetments
-example = {eggs: 2, ham: 1}
+example = {'eggs': 2, 'ham': 1}
+x = 4
+y = 2
 if x == 4: print(x, y)
 x, y = y, x  # swaps two variables
 
